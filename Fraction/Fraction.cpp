@@ -23,24 +23,18 @@ void frac2string(struct frac a, String* ans) {
 void redfrac2string(struct redfrac a, String* ans) {
   if (a.intpart < 0) {
     *ans = "-";
-      a.intpart = -a.intpart;
+    a.intpart = -a.intpart;
   }
 
   if (a.num < 0) {
     *ans = "-";
-      a.num = -a.num;
+    a.num = -a.num;
   }
 
   if (a.den < 0) {
     *ans = "-";
-      a.den = -a.den;
+    a.den = -a.den;
   }
-
-
-
-
-
-
 
   if (a.intpart == 0) {
     if (0==a.num) {
@@ -55,8 +49,6 @@ void redfrac2string(struct redfrac a, String* ans) {
       *ans += String(a.intpart)+"$"+String(a.num)+"/"+String(a.den);    
     }
   }
-
-
 }
 
 struct frac addfrac(struct frac a, struct frac b) {
@@ -87,30 +79,10 @@ struct frac subtractfrac(struct frac a, struct frac b) {
 
 struct redfrac reducefrac(struct frac a) {
   redfrac ans;
-  
-  //  if (a.num > a.den) {
        
     ans.intpart = a.num / a.den;   
     ans.den = a.den; 
     ans.num = a.num % a.den;
-    
-    
-    //  } else {
-    //    ans.intpart=0;
-    //    ans.den = a.den;
-    //    ans.num = a.num;    
-    //  }
-  
-  //  if (ans.den < 0) {
-    
-    //  ans.den = abs(ans.den);
-    //    ans.num = abs(ans.num);
-  //  }
-  
-  //  if (1==ans.den) {
-    // ans.intpart = ans.num;
-    //    ans.num = 0;
-  //  }
-  
-  return ans;
+
+    return ans;
 }
